@@ -6,12 +6,12 @@ function NewsData({ newss }) {
     return (
         <div className="news-container">
             <img
-                src={newss.image_url ? newss.image_url : dummyImg}
+                src={newss.urlToImage ? newss.urlToImage : dummyImg}
                 alt={newss.title}
             />
             <h2>{newss.title}</h2>
             <p>{newss.description}</p>
-            <button onClick={() => window.open(newss.link)}>Read More</button>
+            <button onClick={() => window.open(newss.url)}>Read More</button>
         </div>
     );
 }

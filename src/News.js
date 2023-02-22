@@ -6,9 +6,16 @@ function News() {
     const [news, setNews] = useState([]);
     const [query, setQuery] = useState("tesla");
 
-    const apiUrl = `https://newsdata.io/api/1/news?apikey=pub_17640069902c5dd5c852eaed6122d8e3768f0&q=${query}`;
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    const apiUrl = `https://newsapi.org/v2/everything?q=${query}&from=${year}-${month}-${day}&sortBy=publishedAt&apiKey=e76622b4d45d49588714d715e0e6b51e`;
 
     const queryInput = useRef(null);
+    const newQueryInput = useRef(null);
 
     const topicTags = [
         "Nature",
@@ -29,8 +36,7 @@ function News() {
             const res = await fetch(apiUrl);
             const jsonRes = await res.json();
 
-            console.log(jsonRes.results);
-            setNews(jsonRes.results);
+            setNews(jsonRes.articles);
         } catch (e) {
             console.log(e, "Error");
         }
