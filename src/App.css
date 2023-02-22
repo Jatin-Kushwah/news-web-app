@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    display: grid;
+    margin-inline: 58px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+form {
+    text-align: center;
+    margin: 20px auto;
+    width: 245px;
+    height: 36px;
+    justify-content: center;
+    display: flex;
+}
+
+form input {
+    outline: none;
+    background-color: #ffffff;
+    color: #4b4b4b;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 1px 3px #b5b5b5;
+}
+
+form input::placeholder {
+    padding-inline: 6px;
+}
+
+form button {
+    border: none;
+    color: white;
+    background-color: #4285f4;
+    padding-inline: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    box-shadow: 0 2px 3px #939393;
+    transition: 0.2s;
+}
+
+form button:active {
+    transform: scale(0.9);
+}
+
+.topic {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 60px 40px;
+}
+
+.topic-input {
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #585858;
+    font-weight: 700;
+    color: #ffffff;
+    box-shadow: 0px 1px 3px #adadad;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.topic-input:hover {
+    background-color: #181818;
+    transform: scale(1.1);
+    color: white;
+}
+
+.news-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px #a5a5a5;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.news-container h2,
+p {
+    padding-inline: 12px;
+}
+
+.news-container:hover {
+    transform: scale(1.05);
+}
+
+.news-container img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+.news-container button {
+    width: 50%;
+    color: white;
+    padding: 16px;
+    border: none;
+    font-weight: 600;
+    background-color: #3f3f3f;
+    border-radius: 6px;
+    margin-block: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.news-container button:hover {
+    background-color: #0c0c0c;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 1320px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-container {
+        justify-self: center;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .news-container {
+        justify-self: center;
+    }
+
+    .topic-input {
+        padding: 4px;
+    }
+}
