@@ -6,16 +6,9 @@ function News() {
     const [news, setNews] = useState([]);
     const [query, setQuery] = useState("tesla");
 
-    const date = new Date();
-
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-
     const apiUrl = `https://newsdata.io/api/1/news?apikey=pub_17640069902c5dd5c852eaed6122d8e3768f0&q=${query}`;
 
     const queryInput = useRef(null);
-    const newQueryInput = useRef(null);
 
     const topicTags = [
         "Nature",
