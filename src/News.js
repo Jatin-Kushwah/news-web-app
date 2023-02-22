@@ -76,7 +76,7 @@ function News() {
             </div>
 
             <div className="container">
-                {news.map((news) => {
+                {news?.map((news) => {
                     return <NewsData key={news.url} newss={news} />;
                 })}
             </div>
